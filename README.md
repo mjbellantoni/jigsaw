@@ -23,9 +23,9 @@ And install it with <tt>bundle install</tt>
 ### Retrieving a list of companies
 
 You can search for companies and you'll receive three pieces of information:
- 1. The number of hits found by this search.
- 2. The number of records being returned.
- 3. The actual records as an array of JigSaw::CompanyBasic objects.
+1. The number of hits found by this search.
+1. The number of records being returned.
+1. The actual records as an array of JigSaw::CompanyBasic objects.
 
 Searches are refined using these arguments.
 
