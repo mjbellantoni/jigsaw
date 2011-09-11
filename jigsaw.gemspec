@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     "README.md",
     "Rakefile",
     "VERSION",
+    "jigsaw.gemspec",
     "lib/jigsaw.rb",
     "lib/jigsaw/client.rb",
     "lib/jigsaw/company_basic.rb",
