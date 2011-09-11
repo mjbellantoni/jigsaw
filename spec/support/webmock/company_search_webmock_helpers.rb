@@ -1,7 +1,7 @@
 require 'active_support/json'
 
 
-module CompanyBasicWebmockHelpers
+module CompanySearchWebmockHelpers
 
   BASIC_COMPANIES = [
     {
@@ -106,6 +106,12 @@ module CompanyBasicWebmockHelpers
       "country" => "United States"} ]
 
 
+  def stub_jigsaw_for_request
+    stub_request(:get, "http://www.jigsaw.com/rest/searchCompany.json?token=abc123").to_return(
+        :status => 200,
+        :body => ActiveSupport::JSON.encode({"totalHits" => BASIC_COMPANIES.size, "companies" => BASIC_COMPANIES }),
+        :headers => { :content_type => 'application/json' })
+  end
 
   def stub_jigsaw_for_page_test
     # 9 hits, return the first 5

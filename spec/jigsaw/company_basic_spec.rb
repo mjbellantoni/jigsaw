@@ -4,7 +4,7 @@ require "spec_helper"
 
 describe Jigsaw::CompanyBasic do
 
-  include CompanyBasicWebmockHelpers
+  include CompanySearchWebmockHelpers
 
   context "with 9 hits and 5 hits per page" do
     
