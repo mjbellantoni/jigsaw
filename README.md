@@ -22,8 +22,10 @@ And install it with <tt>bundle install</tt>
 
 ### Retrieving a list of companies
 
-You can search for companies and you'll receive an array of JigSaw::CompanyBasic objects 
-in return.  These contain some, but not all of the information associated with a company.
+You can search for companies and you'll receive three pieces of information:
+ 1. The number of hits found by this search.
+ 2. The number of records being returned.
+ 3. The actual records as an array of JigSaw::CompanyBasic objects.
 
 Searches are refined using these arguments.
 
@@ -56,19 +58,19 @@ First register a new Client:
 
 Then retrieve a list of companies in zip code "02478":
 
-    @client.company_search({:zip_code => "02478"})
+    @total_hits, @fetched_hits, @companies = @client.company_search({:zip_code => "02478"})
 
 Search by zip code and return a single page of 10 results:
 
-    @client.company_search({:zip_code => "02478", :page_size => 10, :offset => 0})
+    @total_hits, @fetched_hits, @companies = @client.company_search({:zip_code => "02478", :page_size => 10, :offset => 0})
 
 Search by zip code and return all results:
 
-    @client.company_search({:zip_code => "02478"}, true)
+    @total_hits, @fetched_hits, @companies = @client.company_search({:zip_code => "02478"}, true)
 
 Search by zip code *and* return all results:
 
-    @client.company_search({:zip_code => "02478", :ownership => "private"}, true)
+    @total_hits, @fetched_hits, @companies = @client.company_search({:zip_code => "02478", :ownership => "private"}, true)
 
 ### Retrieving company details
 

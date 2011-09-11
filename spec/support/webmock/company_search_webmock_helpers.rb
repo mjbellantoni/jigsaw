@@ -113,6 +113,16 @@ module CompanySearchWebmockHelpers
         :headers => { :content_type => 'application/json' })
   end
 
+
+  def stub_jigsaw_for_client_company_search
+    stub_request(:get, "http://www.jigsaw.com/rest/searchCompany.json?offset=0&pageSize=50&token=abc123&zipCode=02478").
+      to_return(
+        :status => 200,
+        :body => ActiveSupport::JSON.encode({"totalHits" => 3, "companies" => BASIC_COMPANIES[0..2] }),
+        :headers => { :content_type => 'application/json' })
+  end
+
+
   def stub_jigsaw_for_page_test
     # 9 hits, return the first 5
     stub_request(:get, "http://www.jigsaw.com/rest/searchCompany.json?offset=0&pageSize=5&token=abc123").to_return(
