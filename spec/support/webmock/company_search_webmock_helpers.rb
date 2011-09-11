@@ -135,7 +135,6 @@ module CompanySearchWebmockHelpers
         :status => 200,
         :body => ActiveSupport::JSON.encode({"totalHits" => 9, "companies" => BASIC_COMPANIES[5..8] }),
         :headers => { :content_type => 'application/json' })
-    puts "SIZES: #{BASIC_COMPANIES[0..4].size} #{BASIC_COMPANIES[5..8].size}"
   end
 
 end
