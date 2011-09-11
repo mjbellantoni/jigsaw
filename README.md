@@ -13,7 +13,7 @@ http://developer.jigsaw.com/member/register and follow the instructions there.
 
 To use this gem, install it with <tt>gem install jigsaw</tt> or add it to your Gemfile:
 
-  gem 'jigsaw'
+    gem 'jigsaw'
 
 And install it with <tt>bundle install</tt>
 
@@ -52,23 +52,23 @@ the developer documentation.
 
 First register a new Client:
 
-  @client = Jigsaw::Client.new(API_KEY)
+    @client = Jigsaw::Client.new(API_KEY)
 
 Then retrieve a list of companies in zip code "02478":
 
-  @client.company_search({:zip_code => "02478"})
+    @client.company_search({:zip_code => "02478"})
 
 Search by zip code and return a single page of 10 results:
 
-  @client.company_search({:zip_code => "02478", :page_size => 10, :offset => 0})
+    @client.company_search({:zip_code => "02478", :page_size => 10, :offset => 0})
 
 Search by zip code and return all results:
 
-  @client.company_search({:zip_code => "02478"}, true)
+    @client.company_search({:zip_code => "02478"}, true)
 
 Search by zip code *and* return all results:
 
-  @client.company_search({:zip_code => "02478", :ownership => "private"}, true)
+    @client.company_search({:zip_code => "02478", :ownership => "private"}, true)
 
 ### Retrieving company details
 
